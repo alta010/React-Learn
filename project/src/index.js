@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";    // needed to use React Router
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Windows from "./pages/Windows";
+import Linux from "./pages/Linux";
+import NoPage from "./pages/NoPage";
+
 // import Car from './App.js';
 // import './index.css';
 // import './test.css'                    // Needed to use external css file
@@ -699,7 +707,7 @@ class MyForm extends React.Component {
 
 ReactDOM.render(<MyForm />, document.getElementById('root'));
 */
-// --------------------------------------------
+// ------------------------------------------------------------------------------------------
 // Styling React using CSS
 
 // -- Using Inline --
@@ -717,7 +725,7 @@ class MyHeader extends React.Component {
 
 ReactDOM.render(<MyHeader />, document.getElementById('root'));
 */
-// --------------------------------------------
+// -----------------------------------------------------------------------------------------------
 // camelCased Property Names
 /*
 class MyHeader extends React.Component {
@@ -733,7 +741,7 @@ class MyHeader extends React.Component {
 
 ReactDOM.render(<MyHeader />, document.getElementById('root'));
 */
-// ---------------------------------------------
+// -----------------------------------------------------------------------------------------------
 // JavaScript Object
 /*
 class MyHeader extends React.Component {
@@ -755,7 +763,7 @@ class MyHeader extends React.Component {
 
 ReactDOM.render(<MyHeader />, document.getElementById('root'));
 */
-// ----------------------------------------
+// --------------------------------------------------------------------------------------------------
 // Example to use css within external css file
 /*
 class MyHeader extends React.Component {
@@ -772,7 +780,7 @@ class MyHeader extends React.Component {
 
 ReactDOM.render(<MyHeader />, document.getElementById('root'));
 */
-// ---------------------------------------
+// ----------------------------------------------------------------------------------------------------
 // CSS Modules
 
 // ReactDOM.render(<Car />, document.getElementById('root'));
@@ -781,3 +789,22 @@ ReactDOM.render(<MyHeader />, document.getElementById('root'));
 // How to use ReactRouting to display multiple pages
 
 // Command : npm i -D react-router-dom         --to download react router
+// then creating a folder named "pages" within the src folder
+// create files with the js extension
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Windows" element={<Windows />} />
+          <Route path="Linux" element={<Linux />} />
+          <Route path="*" element={<NoPage />} />         // a 404 error page
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
