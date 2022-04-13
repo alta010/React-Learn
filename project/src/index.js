@@ -776,3 +776,8 @@ ReactDOM.render(<MyHeader />, document.getElementById('root'));
 // CSS Modules
 
 // ReactDOM.render(<Car />, document.getElementById('root'));
+
+// ---------------------------------------------------------------------------------------------------------
+// How to use ReactRouting to display multiple pages
+
+// Command : npm i -D react-router-dom         --to download react router
