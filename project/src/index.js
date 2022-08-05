@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";    // needed to use React Router
+
 import Layout from "./pages/Layout";
+
 import Home from "./pages/Home";
 import Windows from "./pages/Windows";
 import Linux from "./pages/Linux";
+import Mac from "./pages/Mac";
+
 import NoPage from "./pages/NoPage";
 
 // import Car from './App.js';
@@ -800,6 +804,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="Windows" element={<Windows />} />
           <Route path="Linux" element={<Linux />} />
+          <Route path="Mac" element={<Mac />} />
           <Route path="*" element={<NoPage />} />         // a 404 error page
         </Route>
       </Routes>

@@ -14,6 +14,9 @@ const Layout = () => {
           <li>
             <Link to="/Linux">Linux</Link>
           </li>
+          <li>
+            <Link to="/Mac">Mac</Link>
+          </li>
         </ul>
       </nav>
 
